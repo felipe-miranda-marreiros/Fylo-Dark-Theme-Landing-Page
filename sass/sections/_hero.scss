@@ -1,0 +1,47 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
+
+.hero {
+  background-color: clrs.primary(dark-blue-intro);
+  background-image: url('/assets/images/bg-curvy-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include breakpoint-down('small') {
+    background-position: 0px 210px;
+  }
+
+  text-align: center;
+
+  .container {
+    padding-block: 2.25rem;
+  }
+
+  &__image {
+    background-image: url('/assets/images/illustration-intro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    height: 12.8125rem;
+    width: 276px;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    max-width: 25rem;
+    margin: auto;
+  }
+
+  &__title {
+    margin-bottom: 1.25rem;
+    font-weight: type.weight('bold');
+    font-size: type.size('l-2');
+  }
+
+  &__description {
+    margin-bottom: 1.9375rem;
+    line-height: 1.6;
+    font-weight: type.weight('regular');
+  }
+}
