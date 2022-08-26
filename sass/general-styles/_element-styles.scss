@@ -1,0 +1,12 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: type.size('normal');
+  color: clrs.neutral('white');
+
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}

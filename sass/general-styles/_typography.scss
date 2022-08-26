@@ -1,0 +1,22 @@
+$f-weight: (
+  'regular': 400,
+  'bold': 700,
+);
+
+@function weight($f-weight-value) {
+  @return map-get($f-weight, $f-weight-value);
+}
+
+$f-size: (
+  'normal': 0.875rem,
+  'sm-1': 0.5rem,
+  'sm-2': 0.75rem,
+  'md': 0.625rem,
+  'l-1': 1.1875rem,
+  'l-2': 1.5625rem,
+  'lg': 2.1875rem,
+);
+
+@function size($f-size-value) {
+  @return map-get($f-size, $f-size-value);
+}

@@ -1,0 +1,29 @@
+$color-primary: (
+  'dark-blue-intro': hsl(217, 28%, 15%),
+  'dark-blue-main': hsl(218, 28%, 13%),
+  'dark-blue-footer': hsl(216, 53%, 9%),
+  'dark-blue-test': hsl(219, 30%, 18%),
+);
+
+@function primary($clrs-value) {
+  @return map-get($color-primary, $clrs-value);
+}
+
+$color-accent: (
+  'cyan': hsl(176, 68%, 64%),
+  'blue': hsl(198, 60%, 50%),
+  'light-red': hsl(0, 100%, 63%),
+  'dark-blue-test': hsl(219, 30%, 18%),
+);
+
+@function accent($clrs-value) {
+  @return map-get($color-accent, $clrs-value);
+}
+
+$color-neutral: (
+  'white': hsl(0, 0%, 100%),
+);
+
+@function neutral($clrs-value) {
+  @return map-get($color-neutral, $clrs-value);
+}
