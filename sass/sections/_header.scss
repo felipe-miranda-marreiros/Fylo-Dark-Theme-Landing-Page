@@ -1,0 +1,28 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+
+.header {
+  background-color: clrs.primary(dark-blue-intro);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: 1.375rem;
+
+    font-size: type.size(mid);
+    font-weight: type.weight(regular);
+    color: clrs.neutral('white');
+  }
+
+  &__logo {
+    width: 4.6875rem;
+  }
+
+  &__links {
+    a:not(:last-child) {
+      margin-right: 1.375rem;
+    }
+  }
+}
