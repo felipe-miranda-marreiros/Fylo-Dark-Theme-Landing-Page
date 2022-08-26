@@ -1,0 +1,16 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+
+.btn {
+  display: inline-block;
+
+  padding: 1rem 4.625rem;
+  border-radius: 3.125rem;
+  font-weight: type.weight('bold');
+
+  background: linear-gradient(
+    to right,
+    clrs.accent('cyan'),
+    clrs.accent('blue')
+  );
+}
