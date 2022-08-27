@@ -1,0 +1,76 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
+
+.testimonials {
+  background-color: clrs.primary('dark-blue-main');
+  padding-block: 6.5rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+
+    @include breakpoint-up(large) {
+      flex-direction: row;
+      gap: 36px;
+    }
+  }
+
+  &__item {
+    background-color: clrs.primary('dark-blue-test');
+    padding: 25px 28px 15px 20px;
+    border-radius: 10px;
+    max-width: 363px;
+    position: relative;
+
+    &:first-child::before {
+      content: '';
+      position: absolute;
+      background-image: url('/assets/images/bg-quotes.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      width: 55px;
+      height: 45px;
+      top: -50px;
+
+      @include breakpoint-down(small) {
+        width: 30px;
+        top: -35px;
+      }
+    }
+  }
+
+  &__quote {
+    line-height: 1.9;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+      width: 30px;
+      border-radius: 50%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      span:last-child {
+        font-size: type.size('sm-1');
+      }
+
+      span:first-child {
+        font-size: type.size('sm-2');
+        font-weight: type.weight(bold);
+      }
+    }
+  }
+}
