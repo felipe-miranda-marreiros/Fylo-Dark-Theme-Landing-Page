@@ -1,5 +1,11 @@
+@use '../breakpoints/breakpoint' as *;
+
 .container {
   max-width: 90rem;
   padding-inline: 1.0625rem;
   margin: 0 auto;
+
+  @include breakpoint-up(large) {
+    padding-inline: 5rem;
+  }
 }
