@@ -1,5 +1,19 @@
 @use '../general-styles/color' as clrs;
 @use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
+
+h1,
+h2,
+h3 {
+  font-size: type.size('l-2');
+  font-weight: type.weight(regular);
+  color: clrs.neutral('white');
+
+  @include breakpoint-up(large) {
+    font-size: type.size('lg');
+    font-weight: type.weight(bold);
+  }
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
