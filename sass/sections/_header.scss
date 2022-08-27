@@ -1,5 +1,6 @@
 @use '../general-styles/color' as clrs;
 @use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
 
 .header {
   background-color: clrs.primary(dark-blue-intro);
@@ -14,15 +15,27 @@
     font-size: type.size(mid);
     font-weight: type.weight(regular);
     color: clrs.neutral('white');
+
+    @include breakpoint-up(large) {
+      padding-top: 3.125rem;
+    }
   }
 
   &__logo {
     width: 4.6875rem;
+
+    @include breakpoint-up(large) {
+      width: 8rem;
+    }
   }
 
   &__links {
     a:not(:last-child) {
       margin-right: 1.375rem;
+
+      @include breakpoint-up(large) {
+        margin-right: 3.5rem;
+      }
     }
   }
 }
