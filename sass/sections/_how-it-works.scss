@@ -1,0 +1,83 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
+
+.how-it-works {
+  background-color: clrs.primary('dark-blue-main');
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.875rem;
+
+    @include breakpoint-down(small) {
+      padding-inline: 1.4375rem;
+    }
+
+    @include breakpoint-up(medium) {
+      gap: 54px;
+    }
+
+    @include breakpoint-up(large) {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    @include breakpoint-up(medium) {
+      max-width: 483px;
+      align-self: center;
+    }
+
+    @include breakpoint-up(xlarge) {
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.375rem;
+
+    @include breakpoint-up(large) {
+      padding: 2rem;
+      max-width: 560px;
+    }
+
+    @include breakpoint-down(medium) {
+      text-align: center;
+      max-width: 30rem;
+      margin: auto;
+    }
+
+    @include breakpoint-down(small) {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    @include breakpoint-up(large) {
+      max-width: 20rem;
+    }
+  }
+
+  &__link {
+    border-bottom: 1px solid clrs.accent('cyan');
+    padding-bottom: 5px;
+    color: clrs.accent('cyan');
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @include breakpoint-down(medium) {
+      margin: auto;
+    }
+
+    @include breakpoint-down(small) {
+      margin: 0;
+    }
+  }
+}
