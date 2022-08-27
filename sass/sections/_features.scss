@@ -1,0 +1,42 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
+
+.features {
+  background-color: clrs.primary('dark-blue-main');
+  text-align: center;
+
+  padding-block: 5.9375rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5rem;
+
+    @include breakpoint-up(medium) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: baseline;
+    }
+  }
+
+  &__image {
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: type.size('l-1');
+    font-weight: type.weight(bold);
+  }
+
+  &__description {
+    line-height: 1.6;
+    padding: 0.59rem;
+
+    @include breakpoint-up(medium) {
+      max-width: 25rem;
+      margin: auto;
+    }
+  }
+}
