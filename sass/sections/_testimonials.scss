@@ -4,7 +4,8 @@
 
 .testimonials {
   background-color: clrs.primary('dark-blue-main');
-  padding-block: 6.5rem;
+  padding-top: 11.25rem;
+  padding-bottom: 22rem;
 
   .container {
     display: flex;
@@ -22,7 +23,7 @@
     background-color: clrs.primary('dark-blue-test');
     padding: 25px 28px 15px 20px;
     border-radius: 10px;
-    max-width: 363px;
+    max-width: 360px;
     position: relative;
 
     &:first-child::before {
@@ -44,7 +45,7 @@
   }
 
   &__quote {
-    line-height: 1.9;
+    line-height: 1.7;
     margin-bottom: 15px;
     display: block;
   }
