@@ -10,11 +10,12 @@
   text-align: center;
   padding-top: 2.875rem;
   padding-bottom: 2.25rem;
+  box-shadow: 1px 5px 10px rgb(0 0 0 / 10%);
 
   position: absolute;
   left: 50%;
   right: 50%;
-  transform: translate(-50%, -57%);
+  transform: translate(-50%, -62%);
 
   @include breakpoint-down(small) {
     padding-block: 2.375rem;
