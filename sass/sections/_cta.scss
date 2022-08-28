@@ -1,0 +1,71 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
+
+.section-cta {
+  max-width: 93vmin;
+  width: 100%;
+  background-color: clrs.primary(dark-blue-test);
+  border-radius: 7px;
+  text-align: center;
+  padding-top: 2.875rem;
+  padding-bottom: 2.25rem;
+
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -57%);
+
+  @include breakpoint-down(small) {
+    padding-block: 2.375rem;
+    padding-inline: 1.5rem;
+  }
+
+  h2 {
+    margin-bottom: 1.3rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  &__register {
+    input {
+      max-width: 30rem;
+      width: 100%;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      padding-block: 9px;
+      padding-inline: 38px;
+
+      @include breakpoint-up(large) {
+        margin-right: 1.6875rem;
+      }
+
+      @include breakpoint-down(medium) {
+        margin-bottom: 22px;
+      }
+    }
+  }
+
+  &__btn {
+    color: clrs.neutral('white');
+    border: none;
+    padding-inline: 31px;
+    padding-block: 11px;
+
+    &::placeholder {
+      color: clrs.primary('dark-blue-test');
+    }
+
+    @include breakpoint-down(medium) {
+      display: block;
+      max-width: 30rem;
+      width: 100%;
+      margin: auto;
+    }
+  }
+}

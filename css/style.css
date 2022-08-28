@@ -373,6 +373,70 @@ body {
   font-weight: 700;
 }
 
+.section-cta {
+  max-width: 93vmin;
+  width: 100%;
+  background-color: hsl(219deg, 30%, 18%);
+  border-radius: 7px;
+  text-align: center;
+  padding-top: 2.875rem;
+  padding-bottom: 2.25rem;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -57%);
+}
+@media (max-width: 39.9375em) {
+  .section-cta {
+    padding-block: 2.375rem;
+    padding-inline: 1.5rem;
+  }
+}
+.section-cta h2 {
+  margin-bottom: 1.3rem;
+}
+.section-cta p {
+  margin-bottom: 2rem;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+.section-cta__register input {
+  max-width: 30rem;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding-block: 9px;
+  padding-inline: 38px;
+}
+@media (min-width: 64em) {
+  .section-cta__register input {
+    margin-right: 1.6875rem;
+  }
+}
+@media (max-width: 63.9375em) {
+  .section-cta__register input {
+    margin-bottom: 22px;
+  }
+}
+.section-cta__btn {
+  color: hsl(0deg, 0%, 100%);
+  border: none;
+  padding-inline: 31px;
+  padding-block: 11px;
+}
+.section-cta__btn::placeholder {
+  color: hsl(219deg, 30%, 18%);
+}
+@media (max-width: 63.9375em) {
+  .section-cta__btn {
+    display: block;
+    max-width: 30rem;
+    width: 100%;
+    margin: auto;
+  }
+}
+
 .footer {
   background-color: hsl(216deg, 53%, 9%);
   padding-top: 12.25rem;
