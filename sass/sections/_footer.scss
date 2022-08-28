@@ -1,0 +1,83 @@
+@use '../general-styles/color' as clrs;
+@use '../general-styles/typography' as type;
+@use '../breakpoints/breakpoint' as *;
+
+.footer {
+  background-color: clrs.primary(dark-blue-footer);
+  padding-top: 12.25rem;
+  padding-bottom: 5.625rem;
+
+  &__container {
+    display: grid;
+
+    @include breakpoint-up(large) {
+      grid-template-columns: 0.5fr repeat(4, auto);
+      justify-items: end;
+      gap: 5rem;
+    }
+
+    @include breakpoint-down(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      row-gap: 2rem;
+    }
+
+    @include breakpoint-down(small) {
+      grid-template-columns: 1fr;
+      justify-items: start;
+      row-gap: 1rem;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 2.25rem;
+  }
+
+  &__location {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.3rem;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+
+    > div {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.3rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+
+    @include breakpoint-down(small) {
+      margin-top: 3.8125rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.7rem;
+    justify-self: end;
+
+    @include breakpoint-down(medium) {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    @include breakpoint-down(small) {
+      margin-top: 3.3125rem;
+    }
+  }
+}
+
+ion-icon {
+  width: 25px;
+  height: 25px;
+}
