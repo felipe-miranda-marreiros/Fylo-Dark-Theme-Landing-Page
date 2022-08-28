@@ -7,11 +7,15 @@
   padding-top: 12.25rem;
   padding-bottom: 5.625rem;
 
+  @include breakpoint-down(small) {
+    padding-top: 14.0625rem;
+  }
+
   &__container {
     display: grid;
 
     @include breakpoint-up(large) {
-      grid-template-columns: 0.5fr repeat(4, auto);
+      grid-template-columns: 0.6fr repeat(4, auto);
       justify-items: end;
       gap: 5rem;
     }
