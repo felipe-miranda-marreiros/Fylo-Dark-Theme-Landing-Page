@@ -73,22 +73,27 @@ h1,
 h2,
 h3 {
   font-size: 1.5625rem;
-  font-weight: 400;
+  font-weight: 700;
   color: hsl(0deg, 0%, 100%);
+  font-family: "Raleway", sans-serif;
 }
 @media (min-width: 64em) {
   h1,
 h2,
 h3 {
     font-size: 2.1875rem;
-    font-weight: 700;
   }
+}
+
+a {
+  font-family: "Raleway", sans-serif;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem;
   color: hsl(0deg, 0%, 100%);
+  background-color: hsl(217deg, 28%, 15%);
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -99,17 +104,36 @@ body {
   padding-inline: 1.0625rem;
   margin: 0 auto;
 }
+
 .btn {
+  cursor: pointer;
   display: inline-block;
   padding: 1rem 4.625rem;
   border-radius: 3.125rem;
   font-weight: 700;
+  font-family: "Raleway", sans-serif;
   background: linear-gradient(to right, hsl(176deg, 68%, 64%), hsl(198deg, 60%, 50%));
+  position: relative;
+}
+.btn::after {
+  display: block;
+  position: absolute;
+  border-radius: 3.125rem;
+  content: "";
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.2s ease-in-out;
+  background-color: hsl(0deg, 0%, 100%);
+  opacity: 0;
+  visibility: hidden;
+}
+.btn:hover::after {
+  opacity: 0.3;
+  visibility: visible;
 }
 
-.header {
-  background-color: hsl(217deg, 28%, 15%);
-}
 .header .container {
   display: flex;
   align-items: center;
@@ -131,6 +155,11 @@ body {
     width: 8rem;
   }
 }
+.header__links a {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+  transition: font-weight 0.01s ease-in-out;
+}
 .header__links a:not(:last-child) {
   margin-right: 1.375rem;
 }
@@ -139,13 +168,30 @@ body {
     margin-right: 3.5rem;
   }
 }
+.header__links a:hover {
+  text-decoration: underline;
+  transform: scale(1.2);
+  font-weight: 700;
+}
 
 .hero {
-  background-color: hsl(217deg, 28%, 15%);
+  background: url("/assets/images/bg-curvy-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
   text-align: center;
 }
+@media (max-width: 39.9375em) {
+  .hero {
+    background-image: url("/assets/images/bg-curvy-mobile.svg"), linear-gradient(0deg, hsl(218deg, 28%, 13%) 37%, hsl(217deg, 28%, 15%) 50%);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
 .hero .container {
-  padding-block: 2.25rem;
+  padding-top: 2.25rem;
+  padding-bottom: 5rem;
 }
 .hero__image {
   background-image: url("/assets/images/illustration-intro.png");
@@ -231,6 +277,8 @@ body {
 .how-it-works .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2.875rem;
 }
 @media (max-width: 39.9375em) {
@@ -292,9 +340,18 @@ body {
   padding-bottom: 5px;
   color: hsl(176deg, 68%, 64%);
   width: fit-content;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.how-it-works__link:hover {
+  color: hsl(0deg, 0%, 100%);
+  border-bottom: 1px solid hsl(0deg, 0%, 100%);
+}
+.how-it-works__link:hover use:last-child {
+  fill: hsl(0deg, 0%, 100%);
 }
 @media (max-width: 63.9375em) {
   .how-it-works__link {
@@ -309,7 +366,8 @@ body {
 
 .testimonials {
   background-color: hsl(218deg, 28%, 13%);
-  padding-block: 6.5rem;
+  padding-top: 11.25rem;
+  padding-bottom: 22rem;
 }
 .testimonials .container {
   display: flex;
@@ -327,7 +385,7 @@ body {
   background-color: hsl(219deg, 30%, 18%);
   padding: 25px 28px 15px 20px;
   border-radius: 10px;
-  max-width: 363px;
+  max-width: 360px;
   position: relative;
 }
 .testimonials__item:first-child::before {
@@ -348,7 +406,7 @@ body {
   }
 }
 .testimonials__quote {
-  line-height: 1.9;
+  line-height: 1.7;
   margin-bottom: 15px;
   display: block;
 }
@@ -381,10 +439,11 @@ body {
   text-align: center;
   padding-top: 2.875rem;
   padding-bottom: 2.25rem;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
   position: absolute;
   left: 50%;
   right: 50%;
-  transform: translate(-50%, -57%);
+  transform: translate(-50%, -62%);
 }
 @media (max-width: 39.9375em) {
   .section-cta {
@@ -442,12 +501,17 @@ body {
   padding-top: 12.25rem;
   padding-bottom: 5.625rem;
 }
+@media (max-width: 39.9375em) {
+  .footer {
+    padding-top: 14.0625rem;
+  }
+}
 .footer__container {
   display: grid;
 }
 @media (min-width: 64em) {
   .footer__container {
-    grid-template-columns: 0.5fr repeat(4, auto);
+    grid-template-columns: 0.6fr repeat(4, auto);
     justify-items: end;
     gap: 5rem;
   }
@@ -489,6 +553,15 @@ body {
   flex-direction: column;
   gap: 1.3rem;
 }
+.footer__links a {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+  transition: font-weight 0.01s ease-in-out;
+}
+.footer__links a:hover {
+  transform: scale(1.2);
+  font-weight: 700;
+}
 @media (max-width: 39.9375em) {
   .footer__links {
     margin-top: 3.8125rem;
@@ -514,4 +587,8 @@ body {
 ion-icon {
   width: 25px;
   height: 25px;
+  transition: color 0.2s ease-in-out;
+}
+ion-icon:hover {
+  color: hsl(176deg, 68%, 64%);
 }/*# sourceMappingURL=style.css.map */

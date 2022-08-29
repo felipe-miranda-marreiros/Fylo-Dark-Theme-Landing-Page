@@ -3,8 +3,6 @@
 @use '../breakpoints/breakpoint' as *;
 
 .header {
-  background-color: clrs.primary(dark-blue-intro);
-
   .container {
     display: flex;
     align-items: center;
@@ -30,12 +28,24 @@
   }
 
   &__links {
+    a {
+      display: inline-block;
+      transition: transform 0.2s ease-in-out;
+      transition: font-weight 0.01s ease-in-out;
+    }
+
     a:not(:last-child) {
       margin-right: 1.375rem;
 
       @include breakpoint-up(large) {
         margin-right: 3.5rem;
       }
+    }
+
+    a:hover {
+      text-decoration: underline;
+      transform: scale(1.2);
+      font-weight: 700;
     }
   }
 }

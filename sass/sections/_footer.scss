@@ -60,6 +60,17 @@
     flex-direction: column;
     gap: 1.3rem;
 
+    a {
+      display: inline-block;
+      transition: transform 0.2s ease-in-out;
+      transition: font-weight 0.01s ease-in-out;
+    }
+
+    a:hover {
+      transform: scale(1.2);
+      font-weight: 700;
+    }
+
     @include breakpoint-down(small) {
       margin-top: 3.8125rem;
     }
@@ -84,4 +95,9 @@
 ion-icon {
   width: 25px;
   height: 25px;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: clrs.accent('cyan');
+  }
 }

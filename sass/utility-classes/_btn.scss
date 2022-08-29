@@ -2,6 +2,7 @@
 @use '../general-styles/typography' as type;
 
 .btn {
+  cursor: pointer;
   display: inline-block;
 
   padding: 1rem 4.625rem;
@@ -14,4 +15,27 @@
     clrs.accent('cyan'),
     clrs.accent('blue')
   );
+
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    border-radius: 3.125rem;
+    content: '';
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    transition: all 0.2s ease-in-out;
+    background-color: clrs.neutral('white');
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover::after {
+    opacity: 0.3;
+    visibility: visible;
+  }
 }

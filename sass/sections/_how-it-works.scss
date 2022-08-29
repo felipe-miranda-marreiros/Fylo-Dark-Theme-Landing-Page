@@ -9,6 +9,7 @@
   .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 2.875rem;
 
@@ -69,10 +70,22 @@
     padding-bottom: 5px;
     color: clrs.accent('cyan');
     width: fit-content;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
     gap: 5px;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: clrs.neutral('white');
+      border-bottom: 1px solid clrs.neutral('white');
+
+      use:last-child {
+        fill: clrs.neutral('white');
+      }
+    }
 
     @include breakpoint-down(medium) {
       margin: auto;
