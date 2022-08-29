@@ -3,11 +3,29 @@
 @use '../breakpoints/breakpoint' as *;
 
 .hero {
-  background-color: clrs.primary(dark-blue-intro);
+  background: url('/assets/images/bg-curvy-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+
   text-align: center;
 
+  @include breakpoint-down(small) {
+    background-image: url('/assets/images/bg-curvy-mobile.svg'),
+      linear-gradient(
+        0deg,
+        clrs.primary(dark-blue-main) 37%,
+        clrs.primary(dark-blue-intro) 50%
+      );
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .container {
-    padding-block: 2.25rem;
+    padding-top: 2.25rem;
+    padding-bottom: 5rem;
   }
 
   &__image {
