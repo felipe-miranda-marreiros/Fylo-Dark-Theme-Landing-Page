@@ -459,6 +459,9 @@ body {
   max-width: 40rem;
   margin-inline: auto;
 }
+.section-cta__register {
+  position: relative;
+}
 .section-cta__register input {
   max-width: 30rem;
   width: 100%;
@@ -477,6 +480,29 @@ body {
   .section-cta__register input {
     margin-bottom: 22px;
   }
+}
+.section-cta__register .email-error {
+  position: absolute;
+  left: 115px;
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(0deg, 100%, 63%);
+  margin-top: 2px;
+}
+@media (max-width: 63.9375em) {
+  .section-cta__register .email-error {
+    left: 50%;
+    top: -20px;
+  }
+}
+@media (max-width: 39.9375em) {
+  .section-cta__register .email-error {
+    left: 0;
+    right: 0;
+  }
+}
+.section-cta__register .email-error.hidden {
+  display: none;
 }
 .section-cta__btn {
   color: hsl(0deg, 0%, 100%);

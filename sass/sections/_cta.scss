@@ -33,6 +33,8 @@
   }
 
   &__register {
+    position: relative;
+
     input {
       max-width: 30rem;
       width: 100%;
@@ -48,6 +50,29 @@
 
       @include breakpoint-down(medium) {
         margin-bottom: 22px;
+      }
+    }
+
+    .email-error {
+      position: absolute;
+      left: 115px;
+      font-size: 12px;
+      font-weight: type.weight('bold');
+      color: clrs.accent('light-red');
+      margin-top: 2px;
+
+      @include breakpoint-down(medium) {
+        left: 50%;
+        top: -20px;
+      }
+
+      @include breakpoint-down(small) {
+        left: 0;
+        right: 0;
+      }
+
+      &.hidden {
+        display: none;
       }
     }
   }

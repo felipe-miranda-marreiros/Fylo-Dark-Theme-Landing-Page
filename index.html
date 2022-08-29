@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
+    <script src="/js/script.js" defer></script>
+
     <title>
       Frontend Mentor | Fylo landing page with dark theme and features grid
     </title>
@@ -238,7 +240,8 @@
           be happy to help you.
         </p>
         <div class="section-cta__register">
-          <input type="email" placeholder="email@example.com" />
+          <input id="email" type="email" placeholder="email@example.com" />
+          <p class="email-error hidden">Please enter a valid email address</p>
           <button class="section-cta__btn btn" type="button">
             Get Started For Free
           </button>
