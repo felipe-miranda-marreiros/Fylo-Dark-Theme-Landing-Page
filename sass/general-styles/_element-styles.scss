@@ -6,19 +6,24 @@ h1,
 h2,
 h3 {
   font-size: type.size('l-2');
-  font-weight: type.weight(regular);
+  font-weight: type.weight(bold);
   color: clrs.neutral('white');
+  font-family: 'Raleway', sans-serif;
 
   @include breakpoint-up(large) {
     font-size: type.size('lg');
-    font-weight: type.weight(bold);
   }
+}
+
+a {
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: type.size('normal');
   color: clrs.neutral('white');
+  background-color: clrs.primary(dark-blue-intro);
 
   min-height: 100vh;
   text-rendering: optimizeSpeed;
